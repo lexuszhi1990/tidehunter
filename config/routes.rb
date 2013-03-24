@@ -1,5 +1,5 @@
 Riedhunter::Application.routes.draw do
-  get "tide/index"
+  get "tide/index", as: :home
   root to: "tide#index"
 
   resources :posts, only: [:index, :show, :new, :create]
