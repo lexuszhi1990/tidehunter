@@ -6,40 +6,14 @@
 
 body {
   font-family: "Microsoft YaHei",微软雅黑,"SimSun",Arial,Lucida Grande,Tahoma,sans-serif;
-  width: 960px;
-  margin: 0 auto;
-  font-size: 14px;
   font-weight: normal;
   line-height: 22px;
   letter-spacing: 0;
 }
 
 #header {
-  min-height: 100%;
-  height: auto!important;
-  margin: 0;
-
-  .logo-wordmark {
-    float: left;
-    position: relative;
-    padding-top: 9px;
-    padding-bottom: 9px;
-    color: black;
-    font-weight: bold;
-    font-size: 25px;
-  }
-
-  .top-nav {
-    float: left;
-    list-style: none;
-    padding-top: 9px;
-    padding-bottom: 9px;
-  }
-
-  .header-action {
-
-  }
-
+  margin-left: 15%;
+  font-size: 2em;
 }
 
 
