@@ -1,0 +1,32 @@
+<div class="normal-form">
+  <h1>Tide hunter</h1>
+  <form action="/posts" method="post">
+    <input type="text" name="title" />
+    <br/>
+    <input type="text" name="body" />
+    <br/>
+    <input type="submit" name="sub" value="Post" class="btn" />
+  </form>
+
+  <br/>
+  <br/>
+
+  <%= form_tag "/posts", method: "post" do %>
+    <%= label_tag "title" %>
+    <%= text_field_tag :title %>
+    <br/>
+    <%= label_tag "body" %>
+    <%= text_field_tag :body %>
+    <br/>
+    <%= submit_tag "post", class: "btn btn-success" %>
+  <% end %>
+
+
+  <%= form_for @post do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field "title" %>
+    <%= f.label :body %>
+    <%= f.text_area "body", cols: 15, rows: 4 %>
+    <%= f.submit :mypost %>
+  <% end %>
+</div>

@@ -1,0 +1,12 @@
+<div>
+  <p><%= @post.title %></p>
+  <p><%= @post.body %></p>
+  <p><%= @post.user.name if !@post.user.nil? %></p>
+</div>
+<h4>Comments: </h4>
+<ol>
+<% @post.comments.each do |c| %>
+  <li><p><%= c.content  %></p></li>
+  <li><p><%= c.user.name if !c.user.nil? %></p></li>
+<% end %>
+</ol>

@@ -2,6 +2,8 @@ source 'http://ruby.taobao.org'
 
 gem 'rails', '3.2.12'
 gem 'jquery-rails'
+gem 'bootstrap-sass'
+
 
 
 # Gems used only for assets and not required
@@ -14,6 +16,7 @@ group :assets do
 end
 
 group :test, :development do
+  gem 'pry'
   gem 'sqlite3'
   gem 'rspec-rails'
   gem 'capybara'

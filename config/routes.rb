@@ -1,8 +1,8 @@
 Riedhunter::Application.routes.draw do
-  get "posts/index"
   get "tide/index"
   root to: "tide#index"
 
+  resources :posts, only: [:index, :show, :new, :create]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
