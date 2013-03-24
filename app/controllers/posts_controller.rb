@@ -8,9 +8,15 @@ class PostsController < ApplicationController
   end
 
   def create
-    binding.pry
-    @post = Post.create(params[:post])
-    redirect_to posts_path
+    #binding.pry
+    @post = Post.new(params[:post])
+    if @post.save
+      flash[:success] = "Post Success"
+      redirect_to posts_path
+    else
+      flash[:error] = @post.errors.full_messages.join(',')
+      render :new
+    end
   end
 
   def new
