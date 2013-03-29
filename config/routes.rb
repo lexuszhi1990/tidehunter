@@ -1,11 +1,16 @@
 Riedhunter::Application.routes.draw do
-  get "tide/index", as: :home
-  root to: "tide#index"
+  get "/login", to: 'sessions#new'
+  post '/login', to: 'sessions#create'
 
   resources :posts, only: [:index, :show, :new, :create] do
     resources :comments, only: [:create]
   end
   resources :users, only: [:index, :show]
+
+  root to: "tide#index"
+
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
