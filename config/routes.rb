@@ -2,7 +2,9 @@ Riedhunter::Application.routes.draw do
   get "tide/index", as: :home
   root to: "tide#index"
 
-  resources :posts, only: [:index, :show, :new, :create]
+  resources :posts, only: [:index, :show, :new, :create] do
+    resources :comments, only: [:create]
+  end
   resources :users, only: [:index, :show]
 
   # The priority is based upon order of creation:

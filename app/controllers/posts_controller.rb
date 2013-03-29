@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by_id(params[:id])
+    @comment = Comment.new
   end
 
   def create
@@ -14,7 +15,6 @@ class PostsController < ApplicationController
       flash[:success] = "Post Success"
       redirect_to posts_path
     else
-      flash[:error] = @post.errors.full_messages.join(',')
       render :new
     end
   end
