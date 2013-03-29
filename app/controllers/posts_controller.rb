@@ -1,11 +1,16 @@
 class PostsController < ApplicationController
+  before_filter find_post, :only => [:show, :update, :destroy, :edit]
+
   def index
     @posts = Post.all
   end
 
   def show
-    @post = Post.find_by_id(params[:id])
     @comment = Comment.new
+  end
+
+  def new
+    @post = Post.new
   end
 
   def create
@@ -19,9 +24,21 @@ class PostsController < ApplicationController
     end
   end
 
-  def new
-    #binding.pry
-    @post = Post.new
+  def edit
+    
+  end
+
+  def destroy
+    
+  end
+
+  def update
+    
+  end
+
+  private
+  def find_post
+    @post = Post.find_by_id(params[:id])
   end
 
 end
