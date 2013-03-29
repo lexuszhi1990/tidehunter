@@ -1,5 +1,5 @@
 class Addurltopost < ActiveRecord::Migration
   def change
-    add_column :posts, :url, :string
+    add_column :posts, :tag, :string
   end
 end
