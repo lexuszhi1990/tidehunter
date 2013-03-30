@@ -1,12 +1,20 @@
 <div>
-  <p><%= @post.title %></p>
-  <p><%= @post.body %></p>
-  <p><%= @post.user.name if !@post.user.nil? %></p>
+    <p><%= @post.title %></p>
+    <p><%= @post.body %></p>
+    <p><%= @post.user.name if !@post.user.nil? %></p>
 </div>
+
 <h4>Comments: </h4>
-<ol>
+<ul>
 <% @post.comments.each do |c| %>
-  <li><p><%= c.content  %></p></li>
-  <li><p><%= c.user.name if !c.user.nil? %></p></li>
+  <li><p><%= c.content %> <%= c.user.name %></p></li>
 <% end %>
-</ol>
+</ul>
+
+<%= form_for [@post, @comment] do |f| %>
+  <%= render 'shared/errors', obj: @comment %>
+  <%= f.text_area :content, rows: 5 %>
+  <br/>
+  <%= f.submit :Add_Comment, :class => "btn btn-success" %>
+<% end %>
+<!--  binding.pry %>

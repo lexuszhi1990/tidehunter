@@ -3,6 +3,8 @@ source 'http://ruby.taobao.org'
 gem 'rails', '3.2.12'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
+# To use ActiveModel has_secure_password
+gem 'bcrypt-ruby'
 
 
 
@@ -26,8 +28,6 @@ group :production do
   gem 'pg'
 end
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
