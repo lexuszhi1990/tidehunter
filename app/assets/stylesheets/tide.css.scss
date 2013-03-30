@@ -16,7 +16,7 @@ body {
   padding-bottom: 2em;
   h1{
     float: left;
-    margin-left: 15%;
+    margin-left: 10%;
     font-family: serif;
   }
 }
@@ -24,6 +24,7 @@ body {
 .navigation {
   float: left;
   padding-top: 20px;
+  display: block;
   ul {
     position: absolute;
   }

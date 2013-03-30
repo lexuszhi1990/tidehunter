@@ -1,6 +1,10 @@
 <div class="">
-  <%= render 'shared/content_lead', header: "Login" %>
-  <%= form_tag '/login', class: "normal-form" do  %>
+  <%= render 'shared/content_lead', header: "Register" %>
+  <%= form_tag '/register', class: "normal-form" do  %>
+    <div class="control-group">
+      <%= label_tag :username %>
+      <%= text_field_tag :username %>
+    </div>
     <div class="control-group">
       <%= label_tag :email %>
       <%= email_field_tag :email %>
@@ -12,4 +16,5 @@
     <%= submit_tag "NEW USER", class: "btn btn-success" %>
   <% end %>
 </div>
+
 
