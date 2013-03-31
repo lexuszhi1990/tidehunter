@@ -12,19 +12,11 @@ body {
 }
 
 #header {
-  font-size: 2em;
-  padding-bottom: 2em;
-  h1{
-    float: left;
-    margin-left: 10%;
-    font-family: serif;
-  }
 }
 
 .navigation {
   float: left;
   padding-top: 20px;
-  display: block;
   ul {
     position: absolute;
   }
@@ -33,18 +25,22 @@ body {
     display: inline;
   }
   a {
-    margin-left: 0.5em;
-    padding: 0.5em;
+    margin-left: 1em;
     color: #233;
     text-decoration: none;
     font: sans-serif;
+    font-size: 2em;
   }
   a:hover, a:focus {
     background: #233;
     color: #fff;
   }
 }
-
+ 
+hr {
+  margin: 0;
+  padding: 0;
+}
 #main {
   width: 80%;
   margin: 0 10%;
