@@ -1,2 +1,0 @@
-module TideHelper
-end
