@@ -17,9 +17,6 @@ body {
 .navigation {
   float: left;
   padding-top: 20px;
-  ul {
-    position: absolute;
-  }
   li {
     position: relative;
     display: inline;
@@ -41,6 +38,7 @@ hr {
   margin: 0;
   padding: 0;
 }
+
 #main {
   width: 80%;
   margin: 0 10%;
@@ -53,6 +51,7 @@ hr {
 
 .home_page {
   text-align: center;
+    margin: 0 auto;
   p {
     width: 800px;
     margin: 0 auto;
