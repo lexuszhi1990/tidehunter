@@ -1,12 +1,17 @@
-<div class="container">
-  <% @articles.each do |article| %>
-    <%= link_to article.name, article %>
-    <% if current_user.id == 1 %>
-      <%= link_to 'Edit', edit_article_path(article) %>
-      <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
-    <br />
-  <% end %>
+<div id="articles" class="container">
+  <div class="offset2">
+    <h3>Here are my articles</h3>
+    <div>
+      <% @articles.each do |article| %>
+        <%= link_to article.name, article %>
+
+        <% if current_user.id == 5 %>
+          <%= link_to "Destroy", article, method: :DELETE, confirm: 'Are yop sure' %>
+          <%= link_to "Edit", edit_article_path(article) %>
+        <% end %>
+        <br />
+      <% end %>
+    </div>
+  </div>
 </div>
 
-<br />
