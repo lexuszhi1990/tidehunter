@@ -1,7 +1,13 @@
-<h4>All posts</h4>
-<ul>
-<% @posts.each do |p| %>
-  <li> <%= link_to p.title, post_path(p) %> <br/> <%= p.user.name %> </li>
-<% end %>
-</ul>
-<%= link_to "New Post", new_post_path %>
+<div class="well">
+  <ul>
+    <% @posts.each do |p| %>
+      <li> <%= link_to p.title, post_path(p) %> <br/> <%= p.user.name if !p.user.nil?%> 
+      </li>
+    <% if logged_in? %>
+      <%= link_to "edit", edit_post_path(p) %>
+      <%= link_to "New Post", new_post_path %>
+    <% end %>
+    <% end %>
+
+  </ul>
+</div>

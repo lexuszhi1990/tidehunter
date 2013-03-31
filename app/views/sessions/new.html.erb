@@ -3,7 +3,9 @@
   <%= form_tag '/login', class: "normal-form" do  %>
     <div class="control-group">
       <%= label_tag :email %>
-      <%= email_field_tag :email %>
+      <div class="controls">
+        <%= email_field_tag :email %>
+      </div>
     </div>
     <div class="control-group">
       <%= label_tag :password %>
@@ -14,5 +16,7 @@
     <h3> Now, Register</h3>
     <%= link_to "Register", '/register', class: "btn btn-success"%>
   <% end %>
+
 </div>
+
 

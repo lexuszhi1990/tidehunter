@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_filter :find_post, :only => [:show, :update, :destroy, :edit]
+  before_filter :require_user, except: [:show, :index]
 
   def index
     @posts = Post.all
@@ -15,7 +16,9 @@ class PostsController < ApplicationController
 
   def create
     #binding.pry
+    
     @post = Post.new(params[:post])
+    @post.user = current_user
     if @post.save
       flash[:success] = "Post Success"
       redirect_to posts_path
