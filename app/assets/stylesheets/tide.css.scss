@@ -39,7 +39,6 @@ body {
     text-decoration: none;
     font: sans-serif;
   }
-
   a:hover, a:focus {
     background: #233;
     color: #fff;
@@ -55,3 +54,12 @@ body {
   font: 3em bold sans-serif ;
   text-align: center;
 }
+
+.home_page {
+  text-align: center;
+  p {
+    width: 800px;
+    margin: 0 auto;
+  }
+}
+
