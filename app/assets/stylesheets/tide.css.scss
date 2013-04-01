@@ -15,7 +15,7 @@ body {
 }
 
 .navigation {
-  margin: 1em;
+  margin-top: 2em;
   text-align: center;
   li {
     position: relative;
@@ -33,6 +33,7 @@ body {
   .logo {
     font-weight: bolder;
     font-size: 2em;
+    margin-right: 3em;
   }
   a:hover, a:focus {
     background: none;
@@ -51,17 +52,24 @@ body {
   text-align: center;
 }
 
+.text {
+    letter-spacing:2px;
+    text-align:justify;
+    text-indent: 2em;
+    line-height: 180%;
+}
+
 .home_page {
   text-align: center;
   margin: 0 auto;
+  width: 500px;
   
   img {
-    margin-top: 3em;
+    margin: 2em auto;
+  }
+  p {
+    font-family: monospace sans-serif fantasy cursive;
+    font-size: 1em;
   }
 
-  p {
-    font-size: 16px;
-    width: 800px;
-    margin: 10px auto;
-  }
 }
