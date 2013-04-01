@@ -1,17 +1,19 @@
-<div id="articles" class="container">
-  <div class="offset2">
-    <h3>Here are my articles</h3>
-    <div>
-      <% @articles.each do |article| %>
-        <%= link_to article.name, article %>
+<section id="articles" class="container">
+<div class="offset2">
+  <h3 class="all-articles delta">随笔</h3>
+  <ul>
+    <% @articles.each do |article| %>
+      <li class="article-name">
+      <%= link_to article.name, article, class: "article-name" %>
+      - <%= article.created_at.to_date %>
 
-        <% if logged_in? and current_user.id == 5 %>
-          <%= link_to "Destroy", article, method: :DELETE, confirm: 'Are yop sure' %>
-          <%= link_to "Edit", edit_article_path(article) %>
-        <% end %>
-        <br />
+      <% if logged_in? and current_user.id == 5 %>
+        <%= link_to "Destroy", article, method: :DELETE, confirm: 'Are yop sure' %>
+        <%= link_to "Edit", edit_article_path(article) %>
       <% end %>
-    </div>
-  </div>
+      </li>
+    <% end %>
+  </ul>
 </div>
+</section>
 
