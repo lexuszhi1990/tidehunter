@@ -1,4 +1,7 @@
-<%= render 'shared/content_lead', header: @article.name %>
-<div class="container">
-  <%= @article.body %>
+<div class="article-body">
+  <%= link_to :edit, edit_article_path(@article) %>
+  <h4> <%= @article.name %> </h4>
+  <p class="text">
+    <%= sanitize(@article.body) %>
+  </p>
 </div>
