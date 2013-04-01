@@ -5,7 +5,5 @@ class Post < ActiveRecord::Base
   has_many :comments
 
   validates :body, :presence => true
-  validates :title, :presence => true
-  validates :tag, :presence => true
 
 end

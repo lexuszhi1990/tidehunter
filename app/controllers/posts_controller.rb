@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @post = Post.new
   end
 
   def show
@@ -23,7 +24,7 @@ class PostsController < ApplicationController
       flash[:success] = "Post Success"
       redirect_to posts_path
     else
-      render :new
+      render :index
     end
   end
 
