@@ -1,13 +1,13 @@
-<div class="well">
-  <ul>
-    <% @posts.each do |p| %>
-      <li> <%= link_to p.title, post_path(p) %> <br/> <%= p.user.name if !p.user.nil?%> 
-      </li>
-    <% if logged_in? %>
-      <%= link_to "edit", edit_post_path(p) %>
-      <%= link_to "New Post", new_post_path %>
-    <% end %>
-    <% end %>
+<div class="container">
+  <%= link_to "New Post", new_post_path %>
+  <% @posts.each do |p| %>
+    <div class="well">
+      <%= link_to p.title, post_path(p) %> <br/> <%= p.user.name if !p.user.nil?%> 
+      <% if logged_in? and current_user.id == p.user.id %>
+        <%= link_to "edit", edit_post_path(p) %>
+        <%= link_to "Delete", p, :DELETE, comfirm: "Are you sure" %>
+      <% end %>
+    </div>
+  <% end %>
 
-  </ul>
 </div>
