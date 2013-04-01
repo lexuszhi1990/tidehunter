@@ -4,6 +4,8 @@
 
 @import 'bootstrap';
 
+$maincolor:  #7B5E28; 
+
 body {
   font-family: "Microsoft YaHei",微软雅黑,"SimSun",Arial,Lucida Grande,Tahoma,sans-serif;
   font-weight: normal;
@@ -38,7 +40,7 @@ body {
   }
   a:hover, a:focus {
     background: none;
-    color: #7B5E28;
+    color: $maincolor;
   }
 }
  
@@ -48,12 +50,23 @@ body {
   text-align: center;
 }
 
-.text {
+@mixin text {
     letter-spacing: 1px;
     text-align: justify;
     text-indent: 2em;
     line-height: 180%;
 }
+
+.article-body {
+  width: 60%;
+  margin: 2em auto;
+  text-align: center;
+  p {
+    font-size: 15px;
+    @include text;
+  }
+}
+
 
 .home_page {
   text-align: center;
@@ -66,5 +79,6 @@ body {
   p {
     font-family: monospace sans-serif fantasy cursive;
     font-size: 1em;
+    @include text;
   }
 }
