@@ -2,6 +2,9 @@ Riedhunter::Application.routes.draw do
 
 
 
+  resources :travels
+
+
   root to: "tide#index"
 
   get '/about', to: 'tide#show'

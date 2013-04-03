@@ -43,19 +43,12 @@
 }
 
 
-#new_article {
-
-  textarea{
+//for the form
+.mainarea {
     width: 80%;
     height: 50%;
-  }
 }
 
-#article_body {
-    width: 80%;
-    height: auto;
-}
-
-#article_name {
+.mainname {
   width: 40%;
 }
