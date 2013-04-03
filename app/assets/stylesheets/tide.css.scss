@@ -63,6 +63,12 @@ body {
     line-height: 180%;
 }
 
+.maintext {
+  @include text;
+  font-variant: normal;
+  text-transform: none;
+}
+
 .article-body {
   width: 60%;
   margin: 2em auto;

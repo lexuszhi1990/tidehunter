@@ -1,27 +1,18 @@
-<h1>Listing books</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th>Image url</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @books.each do |book| %>
-  <tr>
-    <td><%= book.title %></td>
-    <td><%= book.body %></td>
-    <td><%= book.image_url %></td>
-    <td><%= link_to 'Show', book %></td>
-    <td><%= link_to 'Edit', edit_book_path(book) %></td>
-    <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Book', new_book_path %>
+<div class="book_index">
+  <ul>
+  <% @books.each do |book| %>
+    <li class="book_list">
+    <%= image_tag(book.image_url, class: "bookimage") %>
+    <div class="onebook">
+      <p class="book_title"> <%= book.title %> </p>
+      <p class="maintext book_body" > <%= book.body %> </p>
+    </div>
+    <% if false %>
+      <%= link_to 'Show', book %>
+      <%= link_to 'Edit', edit_book_path(book) %>
+      <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    </li>
+  <% end %>
+  </ul>
+</div>
