@@ -1,27 +1,18 @@
-<h1>Listing travels</h1>
-
-<table>
-  <tr>
-    <th>Place</th>
-    <th>When</th>
-    <th>Body</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @travels.each do |travel| %>
-  <tr>
-    <td><%= travel.place %></td>
-    <td><%= travel.when %></td>
-    <td><%= travel.body %></td>
-    <td><%= link_to 'Show', travel %></td>
-    <td><%= link_to 'Edit', edit_travel_path(travel) %></td>
-    <td><%= link_to 'Destroy', travel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Travel', new_travel_path %>
+<div class="book_index">
+  <ul>
+  <% @travels.each do |travel| %>
+    <li class="book_list">
+    <%= image_tag(travel.image_url, class: "bookimage") %>
+    <div class="onebook">
+      <p class="book_title"> <%= travel.place %>~<%= travel.when.strftime('%Y-%m') %> </p>
+      <p class="maintext book_body" > <%= travel.body %> </p>
+    </div>
+    <% if false %>
+      <%= link_to 'Show', travel %>
+      <%= link_to 'Edit', edit_travel_path(travel) %>
+      <%= link_to 'Destroy', travel, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    </li>
+  <% end %>
+  </ul>
+</div>

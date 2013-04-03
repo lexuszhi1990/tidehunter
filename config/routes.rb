@@ -1,14 +1,6 @@
 Riedhunter::Application.routes.draw do
-
-
-
-  resources :travels
-
-
   root to: "tide#index"
-
   get '/about', to: 'tide#show'
-
   get "/login", to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
@@ -22,6 +14,7 @@ Riedhunter::Application.routes.draw do
   resources :users, only: [:index, :show, :new, :create]
   resources :articles
   resources :books
+  resources :travels
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
