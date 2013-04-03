@@ -1,13 +1,22 @@
 <div class="container">
-  <%= link_to "New Post", new_post_path %>
+
+  <div class="postbody">
+    <%= form_for @post, class: "form-normal" do |f| %>
+      <%= f.label :body %>
+      <%= f.text_area "body", rows: 4%>
+      <%= f.submit :mypost, class: "btn btn-success" %>
+    <% end %>
+  </div>
+
+
+
   <% @posts.each do |p| %>
-    <div class="well">
-      <%= link_to p.title, post_path(p) %> <br/> <%= p.user.name if !p.user.nil?%> 
+    <div class="postbody">
+      <%= p.body  %>
       <% if logged_in? and current_user.id == p.user.id %>
         <%= link_to "edit", edit_post_path(p) %>
-        <%= link_to "Delete", p, :DELETE, comfirm: "Are you sure" %>
+        <%= link_to "Delete", p, method: "DELETE", comfirm: "Are you sure" %>
       <% end %>
     </div>
   <% end %>
-
 </div>
