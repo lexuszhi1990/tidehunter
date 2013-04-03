@@ -1,5 +1,7 @@
 Riedhunter::Application.routes.draw do
 
+
+
   root to: "tide#index"
 
   get '/about', to: 'tide#show'
@@ -13,8 +15,10 @@ Riedhunter::Application.routes.draw do
   resources :posts, except: [:new] do
     resources :comments, only: [:create]
   end
+
   resources :users, only: [:index, :show, :new, :create]
   resources :articles
+  resources :books
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
