@@ -10,7 +10,7 @@ Riedhunter::Application.routes.draw do
   get '/register', to: 'users#new'
   post '/register', to: 'users#create'
 
-  resources :posts, except: [] do
+  resources :posts, except: [:new] do
     resources :comments, only: [:create]
   end
   resources :users, only: [:index, :show, :new, :create]
