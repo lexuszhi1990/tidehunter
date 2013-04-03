@@ -41,11 +41,21 @@
 .lab_article {
   margin-left: 10%;
 }
+
+
 #new_article {
 
   textarea{
     width: 80%;
     height: 50%;
   }
-  
+}
+
+#article_body {
+    width: 80%;
+    height: auto;
+}
+
+#article_name {
+  width: 40%;
 }
