@@ -1,17 +1,17 @@
-<div class="container">
+<div class="post_index">
 
-  <div class="postbody">
+  <div class="post_body">
     <%= form_for @post, class: "form-normal" do |f| %>
-      <%= f.label :body %>
-      <%= f.text_area "body", rows: 4%>
-      <%= f.submit :mypost, class: "btn btn-success" %>
+      <%= f.label "You can Take a post here :)" %>
+      <%= f.text_area "body", autofocus: "autofocus" %>
+      <%= f.submit :CreatePost, class: "btn btn-success" %> 
     <% end %>
   </div>
 
 
 
   <% @posts.each do |p| %>
-    <div class="postbody">
+    <div class="well">
       <%= p.body  %>
       <% if logged_in? and current_user.id == p.user.id %>
         <%= link_to "edit", edit_post_path(p) %>
