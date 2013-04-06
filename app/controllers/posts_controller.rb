@@ -24,7 +24,8 @@ class PostsController < ApplicationController
       flash[:success] = "Post Success"
       redirect_to posts_path
     else
-      render :index
+      flash[:success] = "Post failed"
+      redirect_to posts_path
     end
   end
 

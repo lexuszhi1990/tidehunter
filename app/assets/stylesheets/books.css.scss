@@ -3,6 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .book_index {
+  margin-top: 5em;
+}
+
+.preface {
+  width: 60%;
+  margin: 3em auto;
+  p {
+    font-size: 1.2em;
+    font-weight: 300;
+  }
 }
 
 .book_list {

@@ -7,7 +7,7 @@
       <%= link_to article.name, article, class: "article-name" %>
       - <%= article.created_at.to_date %>
 
-      <% if logged_in? and current_user.id == 5 %>
+      <% if logged_in? and current_user.id == 1 %>
         <%= link_to "Destroy", article, method: :DELETE, confirm: 'Are yop sure' %>
         <%= link_to "Edit", edit_article_path(article) %>
       <% end %>
