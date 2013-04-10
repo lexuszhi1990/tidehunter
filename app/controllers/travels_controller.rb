@@ -1,4 +1,6 @@
 class TravelsController < ApplicationController
+  before_filter :admin_user, except: [:index, :show]
+
   # GET /travels
   # GET /travels.json
   def index

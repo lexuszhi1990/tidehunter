@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :current_user, :logged_in?
+  helper_method :require_user, :current_user, :logged_in?, :admin_user
 
   def require_user
     unless logged_in?
@@ -17,5 +17,9 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     !!current_user
+  end
+
+  def admin_user
+      redirect_to root_path unless current_user and current_user.id != 5
   end
 end
