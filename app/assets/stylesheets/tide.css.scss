@@ -8,10 +8,7 @@ $maincolor:  #7B5E28;
 $leftmargin: 10%;
 
 body {
-  font-family: "Microsoft YaHei",微软雅黑,"SimSun",Arial,Lucida Grande,Tahoma,sans-serif;
-  font-weight: normal;
-  line-height: 22px;
-  letter-spacing: 1px;
+
 }
 
 #main {
@@ -20,6 +17,7 @@ body {
 }
 
 #header {
+
 }
 
 .navigation {
@@ -52,8 +50,7 @@ body {
  
 
 .lead {
-  font: 3em bold sans-serif ;
-  text-align: center;
+  font: 2em bold sans-serif ;
 }
 
 @mixin text {
