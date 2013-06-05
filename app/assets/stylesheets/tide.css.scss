@@ -49,10 +49,6 @@ body {
 }
  
 
-.lead {
-  font: 2em bold sans-serif ;
-}
-
 @mixin text {
     letter-spacing: 1px;
     text-align: justify;
@@ -76,6 +72,11 @@ body {
   }
 }
 
+
+.lead {
+  font-size: 1.3em;
+  @include text;
+}
 
 .home_page {
   text-align: center;
