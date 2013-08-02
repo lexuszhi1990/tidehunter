@@ -1,5 +1,4 @@
 class Article < ActiveRecord::Base
-  attr_accessible :body, :name, :tag, :content_html
+  attr_accessible :body, :name, :content_html
 
-  validates :body, :presence => true
 end
