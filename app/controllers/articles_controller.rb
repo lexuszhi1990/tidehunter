@@ -12,7 +12,6 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    @article.body = @article.body.gsub("\r", "</p><p>")
 
     respond_to do |format|
       format.html # show.html.erb

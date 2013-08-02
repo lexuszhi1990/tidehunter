@@ -1,6 +1,6 @@
 <div class="article-body">
   <h4> <%= @article.name %> </h4>
   <p class="text">
-    <%= sanitize(@article.body) %>
+    <%= raw @article.content_html %>
   </p>
 </div>

@@ -9,4 +9,21 @@ module ApplicationHelper
     end
 
   end
+
+
+  def markdown(text, options = {})
+    options = {
+      :autolink => true,
+      :space_after_headers => true,
+      :fenced_code_blocks => true,
+      :no_intra_emphasis => true,
+      :hard_wrap => true,
+      :strikethrough =>true,
+      :no_styles => true,
+      :filter_html => true,
+      :highlight => true
+    }
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, options)
+    sanitize markdown.render(text)
+  end
 end

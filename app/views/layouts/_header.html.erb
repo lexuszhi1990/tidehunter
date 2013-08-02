@@ -2,13 +2,5 @@
   <ul class="navigation">
     <li> <a href="/" class="logo">TideHunter</a> </li>
     <li> <a href="/articles">Articles</a> </li>
-    <li> <a href="/travels">Travel</a> </li>
-    <li> <a href="/books">Books</a> </li>
-    <li> <a href="/posts">Posts</a> </li>
-    <% if logged_in? %>
-      <li> <%= link_to "Logout", "/logout" %> </li>
-    <% else %>
-      <li> <a href="/login" class="">Login</a></li>
-    <% end %>
   </ul>
 </div>
