@@ -1,12 +1,17 @@
 source 'http://ruby.taobao.org'
 
 gem 'rails', '3.2.12'
-gem 'jquery-rails'
-gem 'bootstrap-sass'
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby'
 
+# https://github.com/vmg/redcarpet
+# A fast, safe and extensible Markdown to (X)HTML parser
+gem "redcarpet", "~> 3.0.0"
 
+# http://nokogiri.org
+# https://github.com/sparklemotion/nokogiri
+# Nokogiri is an HTML, XML, SAX, and Reader parser.
+gem "nokogiri", "~> 1.6.0"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -20,9 +25,7 @@ end
 group :test, :development do
   gem 'pry'
   gem 'sqlite3'
-  gem 'rspec-rails'
   gem 'capybara'
-  gem 'factory_girl_rails'
 end
 
 group :production do
