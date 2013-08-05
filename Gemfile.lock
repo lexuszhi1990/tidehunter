@@ -66,6 +66,10 @@ GEM
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.0.9)
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.6.3)
     devise (2.2.4)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -197,6 +201,7 @@ DEPENDENCIES
   capistrano (~> 2.15.5)
   capistrano-ext (~> 1.2.1)
   capybara
+  coffee-script (~> 2.2.0)
   jquery-rails (~> 3.0.4)
   jquery-ui-rails (~> 4.0.4)
   mysql2 (~> 0.3.13)

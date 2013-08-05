@@ -54,6 +54,8 @@ end
 group :production do
   # https://github.com/brianmario/mysql2
   gem "mysql2", "~> 0.3.13"
+  # http://rubygems.org/gems/coffee-script
+  gem "coffee-script", "~> 2.2.0"
 end
 
 
