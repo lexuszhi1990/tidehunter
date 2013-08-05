@@ -42,8 +42,14 @@ group :test, :development do
   gem 'capybara'
 end
 
+group :development do
+  # http://rubydoc.info/gems/capistrano/2.15.5/frames
+  gem "capistrano", "~> 2.15.5"
+end
+
 group :production do
-  gem 'pg'
+  # https://github.com/brianmario/mysql2
+  gem "mysql2", "~> 0.3.13"
 end
 
 
