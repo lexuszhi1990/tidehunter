@@ -1,4 +1,4 @@
-class CreateArcicles < ActiveRecord::Migration
+class CreateArticle < ActiveRecord::Migration
   def change
     create_table :articles do |t|
       t.string :name
