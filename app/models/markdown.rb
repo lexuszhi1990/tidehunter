@@ -15,7 +15,7 @@ class Markdown
       :filter_html => true,
       :highlight => true
     }
-    @markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML, extensions.merge(options))
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new(options), extensions)
   end
 
 end

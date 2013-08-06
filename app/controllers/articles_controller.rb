@@ -48,7 +48,6 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    @article.content_html = mark_down(@article.body)
 
     respond_to do |format|
       if @article.update_attributes(params[:article])
