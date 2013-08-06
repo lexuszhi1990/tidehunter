@@ -11,7 +11,7 @@ gem "activeadmin", "~> 0.6.0"
 
 # https://github.com/vmg/redcarpet
 # A fast, safe and extensible Markdown to (X)HTML parser
-# gem "redcarpet", "~> 3.0.0"
+gem "redcarpet", "~> 3.0.0"
 
 # http://nokogiri.org
 # https://github.com/sparklemotion/nokogiri

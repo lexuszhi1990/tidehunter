@@ -24,8 +24,9 @@ class ApplicationController < ActionController::Base
       redirect_to root_path unless current_user and current_user.id != 5
   end
 
+  # convert the text to markdown when update the article
   def mark_down(text)
-    Klog::Markdown.render(text)
+    Markdown.render(text)
   end
 
 end
