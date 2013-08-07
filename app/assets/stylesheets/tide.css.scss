@@ -10,15 +10,16 @@ body {
 }
 
 #main {
+  margin: 0;
+  padding: 0;
+}
+
+#header {
   width: 80%;
   margin: 0 10%;
 }
 
-#header {
-
-}
-
-.navigation {
+ul.navigation {
   margin: 2em auto 2em 0;
 
   li {
