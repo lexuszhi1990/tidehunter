@@ -34,6 +34,8 @@ group :assets do
   gem 'sass-rails'
   # gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
+  # http://rubygems.org/gems/coffee-script
+  gem "coffee-script", "~> 2.2.0"
 end
 
 group :test, :development do
@@ -54,8 +56,6 @@ end
 group :production do
   # https://github.com/brianmario/mysql2
   gem "mysql2", "~> 0.3.13"
-  # http://rubygems.org/gems/coffee-script
-  gem "coffee-script", "~> 2.2.0"
 end
 
 
