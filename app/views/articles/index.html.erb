@@ -2,7 +2,7 @@
 <div class="offset2">
   <h3 class="all-articles delta">随笔</h3>
   <ul>
-    <% @articles.each do |article| %>
+    <% collection.each do |article| %>
       <li class="article-name">
       <%= link_to article.name, article, class: "article-name" %>
       - <%= article.created_at.to_date %>
