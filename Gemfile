@@ -50,7 +50,8 @@ group :assets do
 end
 
 group :test, :development do
-  gem 'pry'
+  # https://github.com/rweng/pry-rails
+  gem "pry-rails", "~> 0.3.2"
   gem 'sqlite3'
   gem 'capybara'
 end
