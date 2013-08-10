@@ -2,6 +2,11 @@ source 'http://ruby.taobao.org'
 
 gem 'rails', '3.2.12'
 
+# http://rubygems.org/gems/grape
+# https://github.com/intridea/grape
+# An opinionated micro-framework for creating REST-like APIs in Ruby
+gem "grape", "~> 0.5.0"
+
 # Inherited Resources speeds up development by making your controllers inherit
 # all restful actions so you just have to focus on what is important.
 # http://rubygems.org/gems/inherited_resources
@@ -11,8 +16,7 @@ gem "inherited_resources", "~> 1.4.1"
 # Search Engine Optimization (SEO) plugin for Ruby on Rails applications
 # http://rubygems.org/gems/meta-tags
 # https://github.com/kpumuk/meta-tags
-gem "meta-tags", "~> 1.5.0"
-
+gem "meta-tags", "~> 1.5.0", :require => 'meta_tags'
 
 # http://activeadmin.info/
 # https://github.com/gregbell/active_admin
