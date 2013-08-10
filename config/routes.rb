@@ -2,6 +2,8 @@ Riedhunter::Application.routes.draw do
   root to: "articles#index"
   resources :articles
 
+  mount API => '/'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
