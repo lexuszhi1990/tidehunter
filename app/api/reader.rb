@@ -4,6 +4,12 @@ module Reader
     version 'v1', using: :path
     format :json
 
+    helpers do
+      def access_token!(token)
+        error!('401 Unauthorized', 401) unless ["abcdef"].include?(token)
+      end
+    end
+
     resource :read do
 
       desc "Return a public timeline."
@@ -24,8 +30,10 @@ module Reader
       desc "Create a status."
       params do
         requires :article, type: String, desc: "Your Article body."
+        requires :token, type: String, desc: "Your access token."
       end
       post do
+        access_token!(params[:token])
         Article.create!({
           body: params[:article]
         })
