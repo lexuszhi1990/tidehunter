@@ -1,15 +1,10 @@
 class API < Grape::API
-  format :json
-  desc "Read Articles"
+  prefix "api"
 
+  mount Reader::API
+
+  # used for test "/api/say"
   get 'say' do
-    {hello: "hello"}
-  end
-
-  resource :read do
-    desc "Return a public timeline."
-    get :big do
-      Article.all.count
-    end
+    {hello: "hello world"}
   end
 end
