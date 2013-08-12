@@ -58,6 +58,11 @@ group :test, :development do
   gem "pry-rails", "~> 0.3.2"
   gem 'sqlite3'
   gem 'capybara'
+
+  # http://rubygems.org/gems/rack-mini-profiler
+  # Profiling toolkit for Rack applications with Rails integration. Client
+  # Side profiling, DB profiling and Server profiling
+  gem "rack-mini-profiler", "~> 0.1.27"
 end
 
 group :development do
