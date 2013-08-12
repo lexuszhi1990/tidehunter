@@ -66,9 +66,12 @@ Riedhunter::Application.configure do
     require "pry-debugger"
   else
     config.middleware.use ExceptionNotifier,
-      :email_prefix         => '[thenanfang]:',
-      :sender_address       => %{"ExceptionNotifier" <tidehunter>},
-      :exception_recipients => 'lexuszhi1990@gmail.com'
+    Whatever::Application.config.middleware.use ExceptionNotification::Rack,
+        :email => {
+          :email_prefix         => '[tidehunter]:',
+          :sender_address       => %{"ExceptionNotifier" <tidehunter>},
+          :exception_recipients => 'lexuszhi1990@gmail.com'
+      }
   end
 
   # Log the query plan for queries taking more than this (works
