@@ -30,7 +30,7 @@ module Msg
       post do
         access_token!(params[:token])
         Message.create!({
-          body: params[:state]
+          state: params[:state]
         })
       end
     end
