@@ -61,6 +61,16 @@ Riedhunter::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
+  if ENV['LOCAL_PRODUCTION'] # running `LOCAL_PRODUCTION=1 rails s -e production` on local for debugging
+    config.serve_static_assets = true
+    require "pry-debugger"
+  else
+    config.middleware.use ExceptionNotifier,
+      :email_prefix         => '[thenanfang]:',
+      :sender_address       => %{"ExceptionNotifier" <thenanfang@beansmile.com>},
+      :exception_recipients => 'leon@beansmile.com,rain@beansmile.com,david@beansmile.com'
+  end
+
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
