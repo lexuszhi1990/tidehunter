@@ -67,8 +67,8 @@ Riedhunter::Application.configure do
   else
     config.middleware.use ExceptionNotifier,
       :email_prefix         => '[thenanfang]:',
-      :sender_address       => %{"ExceptionNotifier" <thenanfang@beansmile.com>},
-      :exception_recipients => 'leon@beansmile.com,rain@beansmile.com,david@beansmile.com'
+      :sender_address       => %{"ExceptionNotifier" <tidehunter>},
+      :exception_recipients => 'lexuszhi1990@gmail.com'
   end
 
   # Log the query plan for queries taking more than this (works
