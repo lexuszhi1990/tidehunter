@@ -2,6 +2,10 @@ source 'http://ruby.taobao.org'
 
 gem 'rails', '3.2.12'
 
+# https://github.com/smartinez87/exception_notification
+# http://rubygems.org/gems/exception_notification
+gem "exception_notification", "~> 4.0.0"
+
 # http://rubygems.org/gems/grape
 # https://github.com/intridea/grape
 # An opinionated micro-framework for creating REST-like APIs in Ruby
@@ -63,6 +67,10 @@ group :test, :development do
   # Profiling toolkit for Rack applications with Rails integration. Client
   # Side profiling, DB profiling and Server profiling
   gem "rack-mini-profiler", "~> 0.1.27"
+
+  # gem "better_errors", "~> 0.9.0"
+  # http://rubygems.org/gems/better_errors
+  gem "better_errors", "~> 0.9.0"
 end
 
 group :development do
