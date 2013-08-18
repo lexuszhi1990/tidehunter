@@ -2,6 +2,9 @@ source 'http://ruby.taobao.org'
 
 gem 'rails', '3.2.12'
 
+# https://github.com/brianmario/mysql2
+gem "mysql2", "~> 0.3.13"
+
 # https://github.com/smartinez87/exception_notification
 # http://rubygems.org/gems/exception_notification
 gem "exception_notification", "~> 4.0.0"
@@ -43,6 +46,10 @@ gem "jquery-rails", "~> 3.0.4"
 # https://github.com/joliss/jquery-ui-rails
 gem "jquery-ui-rails", "~> 4.0.4"
 
+# New Relic is a performance management system
+# https://github.com/newrelic/rpm
+gem "newrelic_rpm", "~> 3.6.6.147"
+
 # http://rubygems.org/gems/jquery-ui-sass-rails
 # https://github.com/jhilden/jquery-ui-sass-rails
 # gem "jquery-ui-sass-rails", "~> 4.0.3.0"
@@ -58,9 +65,6 @@ group :assets do
 end
 
 group :test, :development do
-  # https://github.com/rweng/pry-rails
-  gem "pry-rails", "~> 0.3.2"
-  gem 'sqlite3'
   gem 'capybara'
 
   # http://rubygems.org/gems/rack-mini-profiler
@@ -71,6 +75,13 @@ group :test, :development do
   # gem "better_errors", "~> 0.9.0"
   # http://rubygems.org/gems/better_errors
   gem "better_errors", "~> 0.9.0"
+
+  # https://github.com/rweng/pry-rails
+  gem "pry-rails", "~> 0.3.2"
+
+  # http://rubygems.org/gems/pry-debugger
+  # https://github.com/nixme/pry-debugger
+  gem "pry-debugger", "~> 0.2.2"
 end
 
 group :development do
@@ -84,7 +95,7 @@ end
 
 group :production do
   # https://github.com/brianmario/mysql2
-  gem "mysql2", "~> 0.3.13"
+  # gem "mysql2", "~> 0.3.13"
 end
 
 
