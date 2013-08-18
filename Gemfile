@@ -58,14 +58,20 @@ gem "newrelic_rpm", "~> 3.6.6.147"
 # in production environments by default.
 group :assets do
   gem 'sass-rails'
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
+
   # http://rubygems.org/gems/coffee-script
   gem "coffee-script", "~> 2.2.0"
 end
 
 group :test, :development do
   gem 'capybara'
+
+  # use thin in development to get ride of "WARN  Could not determine content-length of response body. Set content-length of the response or set Response#chunked = true"
+  # A thin and fast web server
+  # http://rubygems.org/gems/thin
+  gem "thin", "~> 1.5.0" # September 22, 2012
 
   # http://rubygems.org/gems/rack-mini-profiler
   # Profiling toolkit for Rack applications with Rails integration. Client
@@ -75,6 +81,10 @@ group :test, :development do
   # gem "better_errors", "~> 0.9.0"
   # http://rubygems.org/gems/better_errors
   gem "better_errors", "~> 0.9.0"
+
+  # Retrieve the binding of a method's caller. Can also retrieve bindings even further up the stack.
+  # better_errors use this to display local variables on error pages
+  gem "binding_of_caller", "~> 0.7.1" # September 12, 2012
 
   # https://github.com/rweng/pry-rails
   gem "pry-rails", "~> 0.3.2"
@@ -98,15 +108,5 @@ group :production do
   # gem "mysql2", "~> 0.3.13"
 end
 
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
 # Use unicorn as the app server
 # gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
