@@ -10,7 +10,7 @@ module Msg
       end
     end
 
-    resource :message do
+    namespace :message do
 
       desc "Return a message."
       params do
