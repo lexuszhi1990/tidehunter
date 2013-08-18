@@ -54,52 +54,10 @@ ActiveRecord::Schema.define(:version => 20130811151945) do
     t.datetime "updated_at",   :null => false
   end
 
-  create_table "books", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.string   "image_url"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "comments", :force => true do |t|
-    t.text     "content"
-    t.integer  "user_id"
-    t.integer  "post_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "messages", :force => true do |t|
     t.boolean  "state"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "posts", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "tag"
-  end
-
-  create_table "travels", :force => true do |t|
-    t.string   "place"
-    t.date     "when"
-    t.text     "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "image_url"
-  end
-
-  create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.string   "password_digest"
   end
 
 end
