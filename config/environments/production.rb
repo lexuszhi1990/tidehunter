@@ -65,8 +65,7 @@ Riedhunter::Application.configure do
     config.serve_static_assets = true
     require "pry-debugger"
   else
-    config.middleware.use ExceptionNotifier,
-    Whatever::Application.config.middleware.use ExceptionNotification::Rack,
+    config.middleware.use ExceptionNotification::Rack,
         :email => {
           :email_prefix         => '[tidehunter]:',
           :sender_address       => %{"ExceptionNotifier" <tidehunter>},
