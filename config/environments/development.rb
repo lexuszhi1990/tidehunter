@@ -34,6 +34,8 @@ Riedhunter::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-end
 
-require "pry"
+  require 'new_relic/rack/developer_mode'
+  config.middleware.use NewRelic::Rack::DeveloperMode
+  ENV['NEWRELIC_ENABLE'] = 'false'
+end
