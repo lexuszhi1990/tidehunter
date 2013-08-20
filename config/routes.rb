@@ -1,7 +1,7 @@
 Riedhunter::Application.routes.draw do
   root to: "articles#index"
-  resources :articles
-  resources :messages
+  resources :articles, only:  [:index]
+  resources :messages, only:  [:index]
 
   mount API => '/'
 
