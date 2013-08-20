@@ -46,13 +46,23 @@ gem "jquery-rails", "~> 3.0.4"
 # https://github.com/joliss/jquery-ui-rails
 gem "jquery-ui-rails", "~> 4.0.4"
 
+# Haml (HTML Abstraction Markup Language) is a layer on top of HTML or XML 
+# http://rubygems.org/gems/haml
+gem "haml", "~> 4.0.3"
+
 # New Relic is a performance management system
 # https://github.com/newrelic/rpm
 gem "newrelic_rpm", "~> 3.6.6.147"
 
-# http://rubygems.org/gems/jquery-ui-sass-rails
-# https://github.com/jhilden/jquery-ui-sass-rails
-# gem "jquery-ui-sass-rails", "~> 4.0.3.0"
+# will_paginate provides a simple API for performing paginated queries with
+# Active Record, DataMapper and Sequel
+# http://rubygems.org/gems/will_paginate
+gem "will_paginate", "~> 3.0.4"
+
+# Squeel unlocks the power of Arel in your Rails 3 application with a handy
+# block-based synta
+# http://rubygems.org/gems/squeel
+gem "squeel", "~> 1.0.18"
 
 # Gems used only for assets and not required
 # in production environments by default.
