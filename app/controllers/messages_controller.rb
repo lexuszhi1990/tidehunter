@@ -5,6 +5,6 @@ class MessagesController < ApplicationController
 
   protected
   def collection
-    @messages = Message.recent.paginate(page: params[:page], per_page: 10)
+    @messages = Message.recent.page(params[:page]).per_page(10)
   end
 end
