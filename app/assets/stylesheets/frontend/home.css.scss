@@ -1,0 +1,20 @@
+$page-width: 735px;
+
+#header {
+  margin: 1em auto;
+
+  .container {
+    max-width: $page-width;
+    border-bottom: 1px solid #E5E5E5;
+    h3 {
+      margin-top: 0;
+      margin-bottom: 0;
+      line-height: 1.5em;
+      padding-bottom: 1em;
+    }
+  }
+}
+
+#articles {
+  max-width: $page-width;
+}
