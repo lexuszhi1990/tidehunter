@@ -1,4 +1,6 @@
-<div class="article-body">
-  <h4> <%= @article.name %> </h4>
-  <%= raw @article.content_html %>
+<div id="articles" class="jumbotron">
+  <h2 class="article-title"> <%= @article.name %> </h2>
+  <div class="article-body">
+    <%= raw @article.content_html %>
+  </div>
 </div>
