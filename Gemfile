@@ -64,6 +64,10 @@ gem "will_paginate", "~> 3.0.4"
 # http://rubygems.org/gems/squeel
 gem "squeel", "~> 1.0.18"
 
+# Twitter Bootstrap CSS (with Sass flavour) and JS toolkits for Rails 3 projects
+# http://rubygems.org/gems/anjlab-bootstrap-rails
+gem "bootstrap-sass-rails", "~> 3.0.0.2"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

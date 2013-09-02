@@ -50,6 +50,9 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass-rails (3.0.0.2)
+      railties (>= 3.1.0)
+      sass-rails (>= 3.1.0)
     bourbon (3.1.8)
       sass (>= 3.2.0)
       thor
@@ -267,6 +270,7 @@ DEPENDENCIES
   activeadmin (~> 0.6.0)
   better_errors (~> 0.9.0)
   binding_of_caller (~> 0.7.1)
+  bootstrap-sass-rails (~> 3.0.0.2)
   capistrano (~> 2.15.5)
   capistrano-ext (~> 1.2.1)
   capybara
