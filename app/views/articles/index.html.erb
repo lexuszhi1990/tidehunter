@@ -1,21 +1,13 @@
 <% set_meta_tags title: resource_class.name %>
 
 <section id="articles" class="container">
-<div class="offset2">
-  <h3 class="all-articles delta">随笔</h3>
-  <ul>
+  <div class="row marketing">
     <% collection.each do |article| %>
-      <li class="article-name">
-      <%= link_to article.name, article, class: "article-name" %>
-      - <%= article.created_at.to_date %>
-
-      <% if logged_in? and current_user.id == 1 %>
-        <%= link_to "Destroy", article, method: :DELETE, confirm: 'Are yop sure' %>
-        <%= link_to "Edit", edit_article_path(article) %>
-      <% end %>
-      </li>
+      <div class="col-lg-12">
+          <h4><%= link_to article.name, article %></h4>
+          <p><%= truncate article.body, length: 17, separator: ' '%></p>
+      </div>
     <% end %>
-  </ul>
-</div>
+  </div>
 </section>
 
