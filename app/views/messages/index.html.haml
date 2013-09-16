@@ -6,3 +6,4 @@
       - collection.all.each do |msg|
         %tr
           %td= "some has come at #{msg.created_at.strftime('%A %b %-d, %Y %H:%M:%S')}"
+      = will_paginate collection
