@@ -17,9 +17,6 @@ set :repository, "git@github.com:lexuszhi1990/tidehunter.git"
 set :branch, "master"
 set :git_enable_submodules, 1
 
-
-
-
 # bundler bootstrap
 require 'bundler/capistrano'
 set :bundle_without, [:darwin, :development, :test]
