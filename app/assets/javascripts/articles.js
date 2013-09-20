@@ -3,10 +3,10 @@
 // You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(function(){
-  $preview = $('#preview-contents');
+  var preview = $('#text-preview');
   $('.lab_article .mainarea').keyup(function(event) {
     console.log(event.keyCode);
     markDownText = markdown.toHTML($(this).val());
-    $preview.html(markDownText);
+    preview.html(markDownText);
   });
 });
