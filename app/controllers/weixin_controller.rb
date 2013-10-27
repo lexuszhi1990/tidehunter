@@ -4,9 +4,7 @@ class WeixinController < ApplicationController
   before_filter :check_weixin_legality
 
   def index
-    if params[:xml][:MsgType] == "text"
-      render "echo", :formats => :xml
-    end
+    render "echo", :formats => :xml
   end
 
   def show
