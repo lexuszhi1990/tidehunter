@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class WeixinController < ApplicationController
 
   skip_before_filter :verify_authenticity_token
@@ -19,6 +20,7 @@ class WeixinController < ApplicationController
 
   private
     def check_weixin_legality
+      puts request.method + Time.current.to_s
       array = ["justfortoken1", params[:timestamp], params[:nonce]].sort
       render :text => "Forbidden", :status => 403 if params[:signature] != Digest::SHA1.hexdigest(array.join)
     end
