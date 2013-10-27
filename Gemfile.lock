@@ -1,5 +1,5 @@
 GEM
-  remote: http://ruby.taobao.org/
+  remote: https://rubygems.org/
   specs:
     actionmailer (3.2.12)
       actionpack (= 3.2.12)
@@ -105,6 +105,7 @@ GEM
     ffi (1.4.0)
     formtastic (2.2.1)
       actionpack (>= 3.0)
+    github-markdown (0.6.0)
     grape (0.5.0)
       activesupport
       builder
@@ -210,7 +211,6 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
-    redcarpet (3.0.0)
     ref (1.0.5)
     responders (1.0.0.rc)
       railties (>= 3.2, < 5)
@@ -276,6 +276,7 @@ DEPENDENCIES
   capybara
   coffee-script (~> 2.2.0)
   exception_notification (~> 4.0.0)
+  github-markdown (~> 0.6.0)
   grape (~> 0.5.0)
   haml (~> 4.0.3)
   inherited_resources (~> 1.4.1)
@@ -288,7 +289,6 @@ DEPENDENCIES
   pry-rails (~> 0.3.2)
   rack-mini-profiler (~> 0.1.27)
   rails (= 3.2.12)
-  redcarpet (~> 3.0.0)
   rvm-capistrano (~> 1.4.1)
   sass-rails
   squeel (~> 1.0.18)

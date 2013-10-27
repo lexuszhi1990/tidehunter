@@ -1,0 +1,12 @@
+.lab_article
+  = form_for(@article) do |f|
+    = render 'shared/errors', obj: @article
+    .field
+      = f.label :Title
+      = f.text_field :name, class: "mainname"
+    .field
+      = f.label :Text
+      = f.text_area :body, class: "mainarea"
+    .actions
+      = f.submit class: "btn btn-success"
+#text-preview

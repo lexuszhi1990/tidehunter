@@ -34,7 +34,12 @@ gem "activeadmin", "~> 0.6.0"
 
 # https://github.com/vmg/redcarpet
 # A fast, safe and extensible Markdown to (X)HTML parser
-gem "redcarpet", "~> 3.0.0"
+# hide this for gfm
+# gem "redcarpet", "~> 3.0.0"
+
+# https://help.github.com/articles/github-flavored-markdown
+# use gfm to show articles
+gem "github-markdown", "~> 0.6.0"
 
 # http://nokogiri.org
 # https://github.com/sparklemotion/nokogiri
@@ -47,13 +52,9 @@ gem "jquery-rails", "~> 3.0.4"
 # https://github.com/joliss/jquery-ui-rails
 gem "jquery-ui-rails", "~> 4.0.4"
 
-# Haml (HTML Abstraction Markup Language) is a layer on top of HTML or XML 
+# Haml (HTML Abstraction Markup Language) is a layer on top of HTML or XML
 # http://rubygems.org/gems/haml
 gem "haml", "~> 4.0.3"
-
-# New Relic is a performance management system
-# https://github.com/newrelic/rpm
-gem "newrelic_rpm", "~> 3.6.6.147"
 
 # will_paginate provides a simple API for performing paginated queries with
 # Active Record, DataMapper and Sequel
@@ -88,11 +89,6 @@ group :test, :development do
   # http://rubygems.org/gems/thin
   gem "thin", "~> 1.5.0" # September 22, 2012
 
-  # http://rubygems.org/gems/rack-mini-profiler
-  # Profiling toolkit for Rack applications with Rails integration. Client
-  # Side profiling, DB profiling and Server profiling
-  gem "rack-mini-profiler", "~> 0.1.27"
-
   # gem "better_errors", "~> 0.9.0"
   # http://rubygems.org/gems/better_errors
   gem "better_errors", "~> 0.9.0"
@@ -104,7 +100,6 @@ group :test, :development do
   # https://github.com/rweng/pry-rails
   gem "pry-rails", "~> 0.3.2"
 
-  # http://rubygems.org/gems/pry-debugger
   # https://github.com/nixme/pry-debugger
   gem "pry-debugger", "~> 0.2.2"
 end
@@ -116,6 +111,16 @@ group :development do
   gem "rvm-capistrano", "~> 1.4.1"
   # http://rubydoc.info/gems/capistrano/2.15.5/frames
   gem "capistrano", "~> 2.15.5"
+
+
+  # New Relic is a performance management system
+  # https://github.com/newrelic/rpm
+  gem "newrelic_rpm", "~> 3.6.6.147"
+
+  # http://rubygems.org/gems/rack-mini-profiler
+  # Profiling toolkit for Rack applications with Rails integration. Client
+  # Side profiling, DB profiling and Server profiling
+  gem "rack-mini-profiler", "~> 0.1.27"
 end
 
 group :production do

@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  attr_accessible :body, :name, :content_html
+  attr_accessible :body, :name
   before_save :fill_html_content
 
   # get the article's post time
@@ -10,6 +10,6 @@ class Article < ActiveRecord::Base
 
   private
     def fill_html_content
-      self.content_html = Markdown.render(self.body)
+      self.content_html = GitHub::Markdown.render_gfm(self.body)
     end
 end

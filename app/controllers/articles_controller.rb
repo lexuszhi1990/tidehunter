@@ -3,10 +3,10 @@ class ArticlesController < ApplicationController
   before_filter :authenticate_admin_user!, except: [:index, :show]
 
   def create
-    create! { admin_article_path() }
+    create! { admin_articles_path() }
   end
 
   def update
-    update! { admin_article_path() }
+    update! { admin_articles_path() }
   end
 end
