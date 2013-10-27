@@ -4,7 +4,7 @@ class WeixinController < ApplicationController
   before_filter :check_weixin_legality
 
   def index
-    render "echo", :formats => :xml
+    render :text => "", :status => 200
   end
 
   def show
