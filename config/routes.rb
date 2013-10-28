@@ -6,9 +6,6 @@ Riedhunter::Application.routes.draw do
 
   mount API => '/'
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-
   # first created -> highest priority.
 
   # Sample of regular route:
