@@ -1,5 +1,4 @@
 class Article < ActiveRecord::Base
-  attr_accessible :body, :name
   before_save :fill_html_content
 
   # get the article's post time

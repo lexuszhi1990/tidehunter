@@ -1,7 +1,8 @@
 # source 'http://ruby.taobao.org'
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+# gem 'rails', '3.2.12'
+gem "rails", "~> 4.0.1.rc3"
 
 # https://github.com/brianmario/mysql2
 gem "mysql2", "~> 0.3.13"
@@ -35,32 +36,24 @@ gem "github-markdown", "~> 0.6.0"
 # Nokogiri is an HTML, XML, SAX, and Reader parser.
 # gem "nokogiri", "~> 1.6.0"
 
-# https://github.com/indirect/jquery-rails
-gem "jquery-rails", "~> 3.0.4"
-
 # https://github.com/joliss/jquery-ui-rails
 gem "jquery-ui-rails", "~> 4.0.4"
 
 # Haml (HTML Abstraction Markup Language) is a layer on top of HTML or XML
-# http://rubygems.org/gems/haml
+# http://haml.info/
 gem "haml", "~> 4.0.3"
 
 # will_paginate provides a simple API for performing paginated queries with
 # Active Record, DataMapper and Sequel
-# http://rubygems.org/gems/will_paginate
 gem "will_paginate", "~> 3.0.4"
 
 # Squeel unlocks the power of Arel in your Rails 3 application with a handy
 # block-based synta
-# http://rubygems.org/gems/squeel
-gem "squeel", "~> 1.0.18"
+# https://github.com/ernie/squeel
+gem "squeel", "~> 1.1.1"
 
 # http://github.com/railsjedi/rails_config
 gem "rails_config", "~> 0.3.3"
-
-# Twitter Bootstrap CSS (with Sass flavour) and JS toolkits for Rails 3 projects
-# http://rubygems.org/gems/anjlab-bootstrap-rails
-gem "bootstrap-sass-rails", "~> 3.0.0.2"
 
 # https://github.com/plataformatec/devise
 gem "devise", "~> 3.1.1"
