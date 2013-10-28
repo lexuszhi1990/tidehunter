@@ -1,0 +1,7 @@
+- set_meta_tags title: @article.name
+#articles
+  %h2.article-title
+    = @article.name
+  .article-body
+    = raw @article.content_html
+
