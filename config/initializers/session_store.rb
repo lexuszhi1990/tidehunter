@@ -1,8 +1,8 @@
 # Be sure to restart your server when you modify this file.
 
-Riedhunter::Application.config.session_store :cookie_store, key: '_riedhunter_session'
+Tidehunter::Application.config.session_store :cookie_store, key: '_Tidehunter_session'
 
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information
 # (create the session table with "rails generate session_migration")
-# Riedhunter::Application.config.session_store :active_record_store
+# Tidehunter::Application.config.session_store :active_record_store

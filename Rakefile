@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Riedhunter::Application.load_tasks
+Tidehunter::Application.load_tasks
