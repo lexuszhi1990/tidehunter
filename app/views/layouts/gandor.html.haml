@@ -1,0 +1,10 @@
+-# dashboard lay out here
+%html
+  %head
+    = stylesheet_link_tag    "gandor", :media => "all"
+    = javascript_include_tag "gandor"
+    = display_meta_tags :site => 'Gandor', :reverse => true
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+    = csrf_meta_tags
+  %body
+    = yield

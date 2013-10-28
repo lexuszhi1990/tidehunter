@@ -26,17 +26,6 @@ gem "inherited_resources", "~> 1.4.1"
 # https://github.com/kpumuk/meta-tags
 gem "meta-tags", "~> 1.5.0", :require => 'meta_tags'
 
-# http://activeadmin.info/
-# https://github.com/gregbell/active_admin
-# The administration framework for business critical Ruby on Rails
-# applications.
-gem "activeadmin", "~> 0.6.0"
-
-# https://github.com/vmg/redcarpet
-# A fast, safe and extensible Markdown to (X)HTML parser
-# hide this for gfm
-# gem "redcarpet", "~> 3.0.0"
-
 # https://help.github.com/articles/github-flavored-markdown
 # use gfm to show articles
 gem "github-markdown", "~> 0.6.0"
@@ -72,6 +61,13 @@ gem "rails_config", "~> 0.3.3"
 # Twitter Bootstrap CSS (with Sass flavour) and JS toolkits for Rails 3 projects
 # http://rubygems.org/gems/anjlab-bootstrap-rails
 gem "bootstrap-sass-rails", "~> 3.0.0.2"
+
+# https://github.com/plataformatec/devise
+gem "devise", "~> 3.1.1"
+
+# Advanced seed data handling for Rails
+# https://github.com/mbleigh/seed-fu
+gem "seed-fu", "~> 2.3.0"
 
 # Gems used only for assets and not required
 # in production environments by default.

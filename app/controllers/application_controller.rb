@@ -1,26 +1,15 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :require_user, :current_user, :logged_in?, :admin_user,
-                :mark_down
 
-  def require_user
-    unless logged_in?
-      flash[:error] = "Need to login"
-      redirect_to login_path
+  def after_sign_in_path_for(resource)
+    if resource.is_a?(User) && resource.geek?
+      gandor_root_url
+    else
+      # https://github.com/plataformatec/devise/wiki/How-To:-redirect-to-a-specific-page-on-successful-sign-in
+      # if use omniauth to login, request.env['omniauth.origin'] is automatically set.
+      # request.env['omniauth.origin'] || session[:previous_url] || root_path
+      root_path
     end
-  end
-  
-  def current_user
-    return false if session[:user_id].nil?
-    @current_user ||= User.find(session[:user_id])
-  end
-
-  def logged_in?
-    !!current_user
-  end
-
-  def admin_user
-      redirect_to root_path unless current_user and current_user.id != 5
   end
 end
