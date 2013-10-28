@@ -62,6 +62,9 @@ gem "devise", "~> 3.1.1"
 # https://github.com/mbleigh/seed-fu
 gem "seed-fu", "~> 2.3.0"
 
+# Use jquery as the JavaScript library
+gem "jquery-rails", "~> 3.0.4"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -104,10 +107,13 @@ group :development do
   # http://rubydoc.info/gems/capistrano/2.15.5/frames
   gem "capistrano", "~> 2.15.5"
 
-
   # New Relic is a performance management system
   # https://github.com/newrelic/rpm
   gem "newrelic_rpm", "~> 3.6.6.147"
+
+  # Quiet assets turn off rails assets log like:
+  # Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-20 17:05:52 +0800
+  gem "quiet_assets", "~> 1.0.2"
 
   # http://rubygems.org/gems/rack-mini-profiler
   # Profiling toolkit for Rack applications with Rails integration. Client
