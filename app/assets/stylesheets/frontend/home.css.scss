@@ -1,21 +1,22 @@
-$page-width: 735px;
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 14px helvetica,arial,freesans,clean,sans-serif;
+  line-height: 1.6;
+  margin: 0 auto;
+  padding: 0;
+  text-align:left;
+  color: #333;
+  width: 740px;
+}
 
 #header {
   margin: 1em auto;
 
-  .container {
-    max-width: $page-width;
-    border-bottom: 1px solid #E5E5E5;
-    h3 {
-      margin-top: 0;
-      margin-bottom: 0;
-      line-height: 1.5em;
-      padding-bottom: 1em;
-    }
-  }
 }
 
 #articles {
-  max-width: $page-width;
-  margin: 0 auto;
 }
