@@ -4,8 +4,7 @@ require 'rvm/capistrano'
 set :rvm_ruby_string, 'ruby-1.9.3-p448'
 set :rvm_type, :user
 
-set :app_server, 'gandor'
-set :app_url, 'gamdor'
+set :app_url, 'lingzhi.me'
 
 # repo details
 set :scm, :git
@@ -27,21 +26,19 @@ role :web, app_server
 role :app, app_server
 role :db,  app_server, :primary => true
 
-# # Multi stage
-# # https://github.com/capistrano/capistrano/wiki/2.x-Multistage-Extension
-# # https://github.com/VinceMD/Scem/wiki/Deploying-on-production
+# Multi stage
+# https://github.com/capistrano/capistrano/wiki/2.x-Multistage-Extension
+# https://github.com/VinceMD/Scem/wiki/Deploying-on-production
 # require gem 'capistrano-ext'
-# require 'capistrano/ext/multistage'
-# set :stages, %w(production staging)
-# set :default_stage, "staging" # require config/deploy/staging.rb
+require 'capistrano/ext/multistage'
+set :stages, %w(production staging)
+set :default_stage, "production" # require config/deploy/staging.rb
 
 # server details
 default_run_options[:pty] = true # apparently helps with passphrase prompting
 ssh_options[:forward_agent] = true # tells cap to use my local private key
-# set :deploy_to, "/var/www/#{app_server}"
 set :deploy_to, "/var/www/tidehunter"
 set :deploy_via, :remote_cache
-set :user, "deploy"
 set :use_sudo, false
 # set :shared_children, %w(system log pids) + %w(config)
 
@@ -52,8 +49,6 @@ set :use_sudo, false
 # set :whenever_environment, defer { stage }
 # require "whenever/capistrano"
 # # https://github.com/javan/whenever/blob/master/lib/whenever/capistrano.rb
-
-
 
 # tasks
 namespace :deploy do
@@ -293,7 +288,8 @@ namespace :update_remote do
     remote_settings = YAML::load_file(remote_db_yml_on_local_path)[rails_env]
 
     # dump the local database and store it in the tmp dir
-    run_locally "PGPASSWORD='#{remote_settings['password']}' pg_dump  -U #{local_settings["username"]} #{"-h '#{local_settings["host"]}'" if local_settings["host"]} -c -O '#{local_settings["database"]}' > #{local_sql_file_path}"
+    # run_locally "PGPASSWORD='#{remote_settings['password']}' pg_dump  -U #{local_settings["username"]} #{"-h '#{local_settings["host"]}'" if local_settings["host"]} -c -O '#{local_settings["database"]}' > #{local_sql_file_path}"
+    run_locally "mysqldump -u'#{local_settings["username"]}' -p'#{local_settings["password"]}' #{"-h '#{local_settings["host"]}'" if local_settings["host"]} '#{local_settings["database"]}' > #{local_sql_file_path}"
 
     # gzip db
     run_locally "gzip -f #{local_sql_file_path}"
@@ -306,7 +302,8 @@ namespace :update_remote do
 
     # import db to remote db
     # may need to run `RAILS_ENV=production rake db:create` on remote first
-    run "PGPASSWORD='#{remote_settings['password']}' psql -U #{remote_settings['username']} -d #{remote_settings["database"]} -f #{remote_sql_file_path}"
+    # run "PGPASSWORD='#{remote_settings['password']}' psql -U #{remote_settings['username']} -d #{remote_settings["database"]} -f #{remote_sql_file_path}"
+    run "mysql -u#{remote_settings["username"]} #{"-p#{remote_settings["password"]}" if remote_settings["password"]} #{remote_settings["database"]} < #{remote_sql_file_path}"
 
     # now that we have the updated production dump file we should use the remote settings to import this db
   end
