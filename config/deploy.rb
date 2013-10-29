@@ -4,6 +4,7 @@ require 'rvm/capistrano'
 set :rvm_ruby_string, 'ruby-1.9.3-p448'
 set :rvm_type, :user
 
+set :app_server, 'lingzhi.me'
 set :app_url, 'lingzhi.me'
 
 # repo details
@@ -32,7 +33,7 @@ role :db,  app_server, :primary => true
 # require gem 'capistrano-ext'
 require 'capistrano/ext/multistage'
 set :stages, %w(production staging)
-set :default_stage, "production" # require config/deploy/staging.rb
+set :default_stage, "production" # require config/deploy/production.rb
 
 # server details
 default_run_options[:pty] = true # apparently helps with passphrase prompting
@@ -96,7 +97,7 @@ after 'deploy:update_code', 'deploy:symlink_shared'
 namespace :deploy do
   desc 'Visit the app'
   task :visit_web do
-    system "open #{app_url}"
+    system "open http://#{app_url}"
   end
 end
 after 'deploy:restart', 'deploy:visit_web'
@@ -234,7 +235,11 @@ namespace :update do
     local_settings = YAML::load_file("config/database.yml")[rails_env]
 
     # dump the remote database and store it in the current path's tmp directory.
-    run "PGPASSWORD='#{remote_settings['password']}' pg_dump -U #{remote_settings["username"]} #{"-h '#{remote_settings["host"]}'" if remote_settings["host"]} -c -O '#{remote_settings["database"]}' > #{remote_sql_file_path}"
+    if remote_settings["adapter"].eql? "mysql2"
+      run "mysqldump -u'#{remote_settings["username"]}' -p'#{remote_settings["password"]}' #{"-h '#{remote_settings["host"]}'" if remote_settings["host"]} '#{remote_settings["database"]}' > #{remote_sql_file_path}"
+    elsif remote_settings["adapter"].eql? "postgresql"
+      run "PGPASSWORD='#{remote_settings['password']}' pg_dump -U #{remote_settings["username"]} #{"-h '#{remote_settings["host"]}'" if remote_settings["host"]} -c -O '#{remote_settings["database"]}' > #{remote_sql_file_path}"
+    end
 
     # gzip db
     run "gzip -f #{remote_sql_file_path}"
@@ -247,7 +252,11 @@ namespace :update do
 
     # import db to local db
     # may need to run `RAILS_ENV=production rake db:create` on local first
-    run_locally("PGPASSWORD='#{local_settings['password']}' psql -U #{local_settings["username"]} -d #{local_settings["database"]} -f #{local_sql_file_path}")
+    if local_settings["adapter"].eql? "mysql2"
+      run_locally("mysql -u#{local_settings["username"]} #{"-p#{local_settings["password"]}" if local_settings["password"]} #{local_settings["database"]} < #{local_sql_file_path}")
+    elsif local_settings["adapter"].eql? "postgresql"
+      run_locally("PGPASSWORD='#{local_settings['password']}' psql -U #{local_settings["username"]} -d #{local_settings["database"]} -f #{local_sql_file_path}")
+    end
 
     # now that we have the upated production dump file we should use the local settings to import this db.
   end
