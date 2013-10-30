@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class WeixinController < ApplicationController
-
+  respond_to :xml, :only => :create
   skip_before_filter :verify_authenticity_token
   before_filter :check_weixin_legality
 
@@ -13,7 +13,9 @@ class WeixinController < ApplicationController
   end
 
   def create
-    render "echo", :formats => :xml
+    @resource = Weixin.http_getor params[:xml][:Content]
+
+    render "text"
   end
 
   private
