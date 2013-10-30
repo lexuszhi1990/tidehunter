@@ -30,6 +30,6 @@ class WeixinController < ApplicationController
     end
 
     def weixin_params
-      params.permit(:xml => [:ToUserName :FromUserName :CreateTime :MsgType :Content :FuncFlag])
+      params.permit(:xml => [:ToUserName, :FromUserName, :CreateTime, :MsgType, :Content, :FuncFlag])
     end
 end
