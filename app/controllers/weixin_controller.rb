@@ -12,10 +12,10 @@ class WeixinController < ApplicationController
   end
 
   def create
-    if params[:xml] and params[:xml][:MsgType] == "text"
+    # @resource = Weixin.http_getor "harv"
+    if params[:xml][:MsgType] == "text"
+      render "text", formats: :xml
     end
-    @resource = Weixin.http_getor "harv"
-    render "text", format: :xml
   end
 
   private
