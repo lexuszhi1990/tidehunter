@@ -28,4 +28,8 @@ class WeixinController < ApplicationController
         render :text => "Forbidden", :status => 403
       end
     end
+
+    def weixin_params
+      params.permit(:xml => [:ToUserName :FromUserName :CreateTime :MsgType :Content :FuncFlag])
+    end
 end
