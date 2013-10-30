@@ -22,9 +22,9 @@ class WeixinController < ApplicationController
   private
     def check_weixin_legality
       array = ["justfortoken1",  params["timestamp"], params["nonce"]]
-      render :text => "Forbidden", :status => 403
       if params["timestamp"].nil? or
          params["nonce"].nil? or
-       params[:signature] != Digest::SHA1.hexdigest(array.sort.join)
+         params[:signature] != Digest::SHA1.hexdigest(array.sort.join)
+        render :text => "Forbidden", :status => 403
     end
 end
