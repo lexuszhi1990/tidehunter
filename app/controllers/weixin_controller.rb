@@ -26,5 +26,6 @@ class WeixinController < ApplicationController
          params["nonce"].nil? or
          params[:signature] != Digest::SHA1.hexdigest(array.sort.join)
         render :text => "Forbidden", :status => 403
+      end
     end
 end
