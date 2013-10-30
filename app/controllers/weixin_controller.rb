@@ -13,6 +13,7 @@ class WeixinController < ApplicationController
   end
 
   def create
+    binding.pry
     if params[:xml] and params[:xml][:MsgType] == "text"
     end
       @resource = Weixin.http_getor "harv"
