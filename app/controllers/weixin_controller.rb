@@ -30,7 +30,7 @@ class WeixinController < ApplicationController
     if @keyword.strip.length >=  2
       @search_results = Weixin::http_get(@keyword)
       if @search_results.any?
-        render "create", :formats => :xml
+        render "news", :formats => :xml
       else
         render "error", :formats => :xml, :error_message => "Sorry, there no results."
       end
