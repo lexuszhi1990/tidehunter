@@ -1,1 +1,24 @@
-<xml></xml>
+<xml>
+  <ToUserName><![CDATA[<%= @sender %>]]></ToUserName>
+  <FromUserName><![CDATA[<%= @receiver %>]]></FromUserName>
+  <CreateTime><%= Time.current.to_i %></CreateTime>
+  <MsgType><![CDATA[news]]></MsgType>
+  <ArticleCount><%= @search_results.count %></ArticleCount>
+  <Articles>
+
+    <%= @search_results.each do |school| %>
+
+      <item>
+        <Title><![CDATA[<%= school["name"] %>]]></Title>
+        <Description><![CDATA[<%= "Rank : #{school["rank"]}." %>]]></Description>
+        <% if school == @search_results.first%>
+          <PicUrl><![CDATA[<%= school["image_url"] %>]]></PicUrl>
+        <% else %>
+          <PicUrl><![CDATA[<%= school["logo_url"] %>]]></PicUrl>
+        <% end %>
+        <Url><![CDATA[<%= school["show_url"] %>]]></Url>
+      </item>
+
+    <% end %>
+  </Articles>
+</xml>

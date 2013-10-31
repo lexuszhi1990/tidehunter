@@ -20,15 +20,23 @@ class WeixinController < ApplicationController
     @message_type = root.xpath("MsgType").children.text
     @message_id = root.xpath("MsgId").text.to_i
 
-    @search_results = siralize_school_data Weixin::http_getor(@keyword)
-
     logger.info "receiver :#{@receiver}"
     logger.info "sender :#{@sender}"
     logger.info "send_time :#{@send_time}"
     logger.info "keyword :#{@keyword}"
     logger.info "message_id :#{@message_id}"
     logger.info "message_type :#{@message_type}"
-    render "echo", :formats => :xml
+
+    if @keyword.strip.length > 2
+      @search_results = siralize_school_data Weixin::http_getor(@keyword)
+      if @search_results.any?
+        render "create", :formats => :xml
+      else
+        render "echo", :formats => :xml
+      end
+    else
+      render "echo", :formats => :xml
+    end
   end
 
   private
