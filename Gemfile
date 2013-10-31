@@ -109,7 +109,7 @@ group :development do
   # http://rubygems.org/gems/rvm-capistrano
   gem "rvm-capistrano", "~> 1.5.1"
   # http://rubydoc.info/gems/capistrano/2.15.5/frames
-  gem "capistrano", "~> 3.0.0"
+  gem "capistrano", "~> 2.15.5"
 
   # New Relic is a performance management system
   # https://github.com/newrelic/rpm
