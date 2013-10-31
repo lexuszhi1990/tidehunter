@@ -107,7 +107,7 @@ group :development do
   # http://www.capify.org
   gem "capistrano-ext", "~> 1.2.1"
   # http://rubygems.org/gems/rvm-capistrano
-  gem "rvm-capistrano", "~> 1.5.1"
+  gem "rvm-capistrano", "~> 1.4.1"
   # http://rubydoc.info/gems/capistrano/2.15.5/frames
   gem "capistrano", "~> 2.15.5"
 
