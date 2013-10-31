@@ -34,7 +34,7 @@ gem "github-markdown", "~> 0.6.0"
 # http://nokogiri.org
 # https://github.com/sparklemotion/nokogiri
 # Nokogiri is an HTML, XML, SAX, and Reader parser.
-# gem "nokogiri", "~> 1.6.0"
+gem "nokogiri", "~> 1.6.0"
 
 # https://github.com/joliss/jquery-ui-rails
 gem "jquery-ui-rails", "~> 4.0.4"
