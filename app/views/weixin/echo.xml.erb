@@ -1,7 +1,7 @@
 <xml>
     <ToUserName><![CDATA[<%= @sender %>]]></ToUserName>
     <FromUserName><![CDATA[<%= @receiver %>]]></FromUserName>
-    <CreateTime><%= @send_time %></CreateTime>
+    <CreateTime><%= Time.current.to_i %></CreateTime>
     <MsgType><![CDATA[text]]></MsgType>
     <Content><![CDATA[大山的回声：<%= @keyword %>]]></Content>
     <FuncFlag>0</FuncFlag>
