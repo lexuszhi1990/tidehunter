@@ -69,6 +69,10 @@ gem "jquery-rails", "~> 3.0.4"
 # https://github.com/rest-client/rest-client
 gem "rest-client", "~> 1.6.7"
 
+# FriendlyId is the "Swiss Army bulldozer" of slugging and permalink plugins for Active Record.
+# http://github.com/norman/friendly_id
+gem "friendly_id", "~> 5.0.1"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
