@@ -28,7 +28,7 @@ class WeixinController < ApplicationController
     logger.info "message_type :#{@message_type}"
 
     if @keyword.strip.length >=  2
-      @search_results = siralize_school_data Weixin::http_get(@keyword)
+      @search_results = Weixin::http_get(@keyword)
       if @search_results.any?
         render "create", :formats => :xml
       else
