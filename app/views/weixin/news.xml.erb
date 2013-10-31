@@ -10,7 +10,7 @@
 
       <item>
         <Title><![CDATA[<%= school["name"] %>]]></Title>
-        <Description><![CDATA[<%= "Rank : #{school["rank"]}." %>]]></Description>
+        <Description><![CDATA[<%= "school["zh_name"]. Rank : #{school["rank"].to_i.to_s}." %>]]></Description>
         <% if school == @search_results.first%>
           <PicUrl><![CDATA[<%= school["image_url"] %>]]></PicUrl>
         <% else %>
