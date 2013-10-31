@@ -179,6 +179,8 @@ GEM
     ref (1.0.5)
     responders (1.0.0)
       railties (>= 3.2, < 5)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rvm-capistrano (1.4.4)
       capistrano (>= 2.15.4)
     sass (3.2.12)
@@ -260,6 +262,7 @@ DEPENDENCIES
   rack-mini-profiler (~> 0.1.27)
   rails (~> 4.0.1.rc3)
   rails_config (~> 0.3.3)
+  rest-client (~> 1.6.7)
   rvm-capistrano (~> 1.4.1)
   sass-rails
   seed-fu (~> 2.3.0)

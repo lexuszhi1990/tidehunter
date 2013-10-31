@@ -65,6 +65,10 @@ gem "seed-fu", "~> 2.3.0"
 # Use jquery as the JavaScript library
 gem "jquery-rails", "~> 3.0.4"
 
+# A simple HTTP and REST client for Ruby
+# https://github.com/rest-client/rest-client
+gem "rest-client", "~> 1.6.7"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -103,9 +107,9 @@ group :development do
   # http://www.capify.org
   gem "capistrano-ext", "~> 1.2.1"
   # http://rubygems.org/gems/rvm-capistrano
-  gem "rvm-capistrano", "~> 1.4.1"
+  gem "rvm-capistrano", "~> 1.5.1"
   # http://rubydoc.info/gems/capistrano/2.15.5/frames
-  gem "capistrano", "~> 2.15.5"
+  gem "capistrano", "~> 3.0.0"
 
   # New Relic is a performance management system
   # https://github.com/newrelic/rpm
