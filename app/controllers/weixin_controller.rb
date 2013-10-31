@@ -32,10 +32,10 @@ class WeixinController < ApplicationController
       if @search_results.any?
         render "news", :formats => :xml
       else
-        render "error", :formats => :xml, :error_message => "Sorry, there no results."
+        render "error", :formats => :xml, :locals => { :error_message => "Sorry, there no results." }
       end
     else
-      render "error", :formats => :xml, :error_message => "Sorry, your input is so short."
+      render "error", :formats => :xml, :locals => { :error_message => "Sorry, your input is so short." }
     end
   end
 
