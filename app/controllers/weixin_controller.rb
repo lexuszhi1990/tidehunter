@@ -20,6 +20,8 @@ class WeixinController < ApplicationController
     @message_type = root.xpath("MsgType").children.text
     @message_id = root.xpath("MsgId").text.to_i
 
+    @search_results = siralize_school_data Weixin::http_getor(@keyword)
+
     logger.info "receiver :#{@receiver}"
     logger.info "sender :#{@sender}"
     logger.info "send_time :#{@send_time}"
@@ -37,6 +39,10 @@ class WeixinController < ApplicationController
          params[:signature] != Digest::SHA1.hexdigest(array.sort.join)
         render :text => "Forbidden", :status => 403
       end
+    end
+
+    def siralize_school_data(school)
+      school["name"] + "\n.Rank : " + school["rank"] + school["summary"]
     end
 
     def weixin_params

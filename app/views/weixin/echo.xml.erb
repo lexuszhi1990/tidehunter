@@ -3,6 +3,6 @@
     <FromUserName><![CDATA[<%= @receiver %>]]></FromUserName>
     <CreateTime><%= Time.current.to_i %></CreateTime>
     <MsgType><![CDATA[text]]></MsgType>
-    <Content><![CDATA[大山的回声：<%= @keyword %>]]></Content>
+    <Content><![CDATA[<%= @search_results %>]]></Content>
     <FuncFlag>0</FuncFlag>
 </xml>
