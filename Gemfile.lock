@@ -83,8 +83,6 @@ GEM
       actionmailer (>= 3.0.4)
       activesupport (>= 3.0.4)
     execjs (2.0.2)
-    friendly_id (5.0.1)
-      activerecord (~> 4.0.0)
     github-markdown (0.6.0)
     grape (0.5.0)
       activesupport
@@ -248,7 +246,6 @@ DEPENDENCIES
   coffee-script (~> 2.2.0)
   devise (~> 3.1.1)
   exception_notification (~> 4.0.0)
-  friendly_id (~> 5.0.1)
   github-markdown (~> 0.6.0)
   grape (~> 0.5.0)
   haml (~> 4.0.3)
